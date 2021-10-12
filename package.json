@@ -29,7 +29,7 @@
     "@nuxtjs/pwa": "^3.0.0-beta.16",
     "@nuxtjs/sitemap": "^1.2.0",
     "glob": "^7.1.4",
-    "highlight.js": "^9.15.9",
+    "highlight.js": "^10.4.1",
     "markdown-it-classy": "^0.2.0",
     "nuxt": "^2.0.0",
     "tachyons": "^4.11.1",
