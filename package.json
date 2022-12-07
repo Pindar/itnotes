@@ -52,7 +52,7 @@
     "imagemin-pngquant": "^8.0.0",
     "imagemin-svgo": "^7.0.0",
     "jest": "^24.1.0",
-    "lint-staged": "^8.2.1",
+    "lint-staged": "^13.1.0",
     "prettier": "^1.16.4",
     "svg-inline-loader": "^0.8.0",
     "vue-jest": "^4.0.0-0",
