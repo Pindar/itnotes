@@ -1,0 +1,91 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - master
+      - main
+      - '**'
+  pull_request:
+    branches:
+      - '**'
+
+env:
+  NODE_ENV: production
+  BUILD_DIR: ./dist
+
+jobs:
+  common-steps:
+    runs-on: ubuntu-latest
+    outputs:
+      build-dir: ${{ steps.build.outputs.build-dir }}
+    steps:
+      # Checkout the repository
+      - name: Checkout repository
+        uses: actions/checkout@v3.0.0
+
+      # Cache Node.js dependencies
+      - name: Cache Node.js modules
+        uses: actions/cache@v3
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      # Set up Node.js
+      - name: Set up Node.js
+        uses: actions/setup-node@v3.0.0
+        with:
+          node-version: 12
+
+      # Install dependencies
+      - name: Install dependencies
+        run: npm install
+
+      # Run Linting
+      - name: Run Lint
+        run: npm run lint
+
+      # Run Tests
+      - name: Run Tests
+        run: npm test
+
+      # Generate the manifest (if needed)
+      - name: Generate manifest
+        run: node --experimental-modules generateManifest.mjs
+
+      # Build the Nuxt.js static site
+      - name: Build the site
+        id: build
+        run: npm run generate
+
+  deploy:
+    if: github.ref_name == 'master' || github.ref_name == 'main'
+    needs: common-steps
+    runs-on: ubuntu-latest
+
+    steps:
+      # Reuse the build directory from common-steps
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3.0.0
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ${{ needs.common-steps.outputs.build-dir }}
+
+  ci:
+    if: github.ref_name != 'master' && github.ref_name != 'main'
+    needs: common-steps
+    runs-on: ubuntu-latest
+
+    steps:
+      # Reuse the build directory from common-steps
+      - name: Verify build
+        run: echo "Build completed successfully in ${{ needs.common-steps.outputs.build-dir }}"
+
+      # Upload build artifacts for debugging
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: build-artifacts
+          path: ${{ needs.common-steps.outputs.build-dir }}
