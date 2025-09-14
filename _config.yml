@@ -1,0 +1,10 @@
+title: ITNotes
+description: Informatik-Themen kurz notiert oder ausführlich festgehalten
+theme: minima
+permalink: /:categories/:year/:month/:day/:title/
+baseurl: "" # Leer lassen, wenn die Seite unter <benutzername>.github.io läuft
+url: "https://itnotes.github.io" # Anpassen
+exclude:
+  - README.md
+  - check_images.rb
+  - check_posts.rb

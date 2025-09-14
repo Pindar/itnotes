@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ page.title }} - ITNotes</title>
+  <!-- Tailwind CSS über CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Tailwind Typography für schöne Blog-Formatierung -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          typography: ({ theme }) => ({
+            DEFAULT: {
+              css: {
+                '--tw-prose-body': theme('colors.gray.800'),
+                '--tw-prose-headings': theme('colors.gray.900'),
+                '--tw-prose-links': theme('colors.blue.600'),
+                '--tw-prose-bold': theme('colors.gray.900'),
+              },
+            },
+          }),
+        },
+      },
+      plugins: [require('@tailwindcss/typography')],
+    };
+  </script>
+  <link rel="stylesheet" href="/assets/css/custom.css">
+</head>
+<body class="bg-gray-50">
+  <!-- Navigation (wird auf ALLER Seiten angezeigt) -->
+  <nav class="bg-white shadow-sm sticky top-0 z-10">
+    <div class="max-w-4xl mx-auto px-4 py-3 flex space-x-6">
+      <a href="/" class="text-blue-600 hover:text-blue-800 font-medium">Home</a>
+      <a href="/about" class="text-gray-600 hover:text-blue-600 font-medium">About</a>
+      <a href="/book-shelf" class="text-gray-600 hover:text-blue-600 font-medium">Book-Shelf</a>
+      <a href="/publications" class="text-gray-600 hover:text-blue-600 font-medium">Publications</a>
+    </div>
+  </nav>
+
+  <!-- Hauptinhalt (wird von den einzelnen Seiten gefüllt) -->
+  <main class="max-w-4xl mx-auto px-4 py-8">
+    {{ content }}
+  </main>
+</body>
+</html>
