@@ -1,8 +1,0 @@
-{
-  "eslint.validate": [
-    "javascript",
-    "javascriptreact",
-    { "language": "vue", "autoFix": true }
-  ],
-  "vetur.format.defaultFormatter.html": "prettier"
-}
