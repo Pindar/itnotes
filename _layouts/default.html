@@ -27,6 +27,11 @@
     };
   </script>
   <link rel="stylesheet" href="/assets/css/custom.css">
+  <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
+  <!-- Kanonische URL hinzufügen -->
+  {% if page.url %}
+  <link rel="canonical" href="{{ site.url }}{{ page.url }}" />
+  {% endif %}
 </head>
 <body class="bg-gray-50">
   <!-- Navigation (wird auf ALLER Seiten angezeigt) -->
