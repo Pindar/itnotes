@@ -2,6 +2,7 @@
 layout: page
 title: About
 description: About - itnotes
+lang: en
 ---
 
 # About

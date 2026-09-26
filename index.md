@@ -1,6 +1,8 @@
 ---
 layout: default
 title: Home
+lang: en
+description: "Everything is an Experiment. IT topics on DevOps, programming, and lean development — briefly noted or written up in full."
 ---
 <div class="max-w-4xl mx-auto px-4 py-8">
   <!-- Header -->

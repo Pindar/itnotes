@@ -2,6 +2,7 @@
 layout: page
 title: Publications
 description: Publications - itnotes
+lang: en
 ---
 
 # Publications
