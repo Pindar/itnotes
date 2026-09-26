@@ -2,7 +2,7 @@ require 'yaml'
 
 # Pfade definieren
 posts_dir = './_posts'
-assets_dir = './assets'
+site_root = '.'
 
 # Alle Markdown-Dateien im _posts-Ordner durchsuchen
 Dir.glob("#{posts_dir}/*.md").each do |file|
@@ -11,15 +11,18 @@ Dir.glob("#{posts_dir}/*.md").each do |file|
   # Bildreferenzen im Markdown finden (z. B. ![Alt-Text](Pfad/zum/Bild.jpg))
   image_references = content.scan(/!\[.*?\]\((.*?)\)/).flatten
 
-  # Überprüfen, ob die Bilder im assets-Ordner existieren
+  # Überprüfen, ob die Bilder existieren
   image_references.each do |image_path|
-    # Entferne führende "/" für relative Pfade
+    # Externe URLs können nicht lokal geprüft werden
+    if image_path =~ %r{^https?://}
+      puts "↗️  Externes Bild (nicht geprüft): #{image_path} in #{file}"
+      next
+    end
+
+    # Bildpfade sind bereits site-root-relativ (z. B. /assets/foo.png)
     relative_path = image_path.sub(/^\//, '')
+    full_path = File.join(site_root, relative_path)
 
-    # Vollständigen Pfad zum Bild erstellen
-    full_path = File.join(assets_dir, relative_path)
-
-    # Überprüfung
     if File.exist?(full_path)
       puts "✅ Bild gefunden: #{image_path} in #{file}"
     else
