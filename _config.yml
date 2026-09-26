@@ -1,10 +1,18 @@
 title: ITNotes
 description: Informatik-Themen kurz notiert oder ausführlich festgehalten
+lang: de
+logo: /assets/default.jpg
 theme: minima
 permalink: /:categories/:year/:month/:day/:title/
 baseurl: "" # Leer lassen, wenn die Seite unter <benutzername>.github.io läuft
 url: "https://www.itnotes.de" # Anpassen
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-feed
 exclude:
   - README.md
   - check_images.rb
   - check_posts.rb
+  - CLAUDE.md
+  - assets/README.md

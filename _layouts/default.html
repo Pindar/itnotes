@@ -3,35 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{{ page.title }} - ITNotes</title>
-  <!-- Tailwind CSS über CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Tailwind Typography für schöne Blog-Formatierung -->
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          typography: ({ theme }) => ({
-            DEFAULT: {
-              css: {
-                '--tw-prose-body': theme('colors.gray.800'),
-                '--tw-prose-headings': theme('colors.gray.900'),
-                '--tw-prose-links': theme('colors.blue.600'),
-                '--tw-prose-bold': theme('colors.gray.900'),
-              },
-            },
-          }),
-        },
-      },
-      plugins: [require('@tailwindcss/typography')],
-    };
-  </script>
+  <link rel="icon" href="/favicon.ico">
   <link rel="stylesheet" href="/assets/css/custom.css">
-  <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
-  <!-- Kanonische URL hinzufügen -->
-  {% if page.url %}
-  <link rel="canonical" href="{{ site.url }}{{ page.url }}" />
-  {% endif %}
+  {% feed_meta %}
+  {% seo %}
 </head>
 <body class="bg-gray-50">
   <!-- Navigation (wird auf ALLER Seiten angezeigt) -->
