@@ -7,7 +7,7 @@ lang: en
 
 # About
 
-I’m a passionate [software craftsman](http://manifesto.softwarecraftsmanship.org/) who saves the world from toil since 1998.
+Everything is an experiment. I believe that people can only achieve the extraordinary together.
 
 ## Profiles
 
