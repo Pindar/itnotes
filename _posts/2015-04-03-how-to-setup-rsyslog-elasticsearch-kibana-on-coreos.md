@@ -19,7 +19,7 @@ You can find all the code on github in my [coreos-demo project](https://github.c
 
 I thought the best approach to handle a tremendously amount of log messages is to use syslog as shipping mechanism and elasticsearch together with kibana for visualization.
 
-![Log shipping overview](/log-shipping.png)
+![Log shipping overview](/assets/log-shipping.png)
 
 Each application will ship the logs to a central rsyslog server by using the syslog protocol. The good thing is that almost every application logger system supports syslog (log4j, monolog etc.). In case you have application container (container with only one application running) you can also use a separate docker container that ships the logs. The important thing is to tag each log entry for simpler log parsing in the next step. Now the central rsyslog server can do both parse each log message and forward each log message to elasticsearch. Finally you can visualize and search through the log entries with kibana.
 
