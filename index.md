@@ -5,6 +5,7 @@ title: Home
 <div class="max-w-4xl mx-auto px-4 py-8">
   <!-- Header -->
   <header class="mb-12">
+    <p class="text-sm font-semibold text-blue-600 uppercase tracking-wide mb-2">Everything is an Experiment</p>
     <h1 class="text-3xl font-bold text-gray-800 mb-4">IT notes</h1>
     <p class="text-lg text-gray-600">
       IT topics briefly noted or recorded in detail in an article.
