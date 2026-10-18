@@ -1,0 +1,10 @@
+{%- comment -%}
+  Title of a post, falling back to its first words for legacy posts with an empty title.
+  Parameters: title (front matter title), text (rendered post content).
+{%- endcomment -%}
+{%- assign shown_title = include.title | strip -%}
+{%- if shown_title != "" -%}
+  {{- shown_title -}}
+{%- else -%}
+  {{- include.text | replace: "<", " <" | strip_html | replace: "&lt;", " <" | replace: "&gt;", ">" | strip_html | strip_newlines | strip | truncatewords: 8 -}}
+{%- endif -%}

@@ -17,7 +17,7 @@ description: "Everything is an Experiment. IT topics on DevOps, programming, and
     {% for post in year.items %}
     <li>
       <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%d.%m." }}</time>
-      <a class="post-link" href="{{ post.url | relative_url }}">{{ post.title }}</a>
+      <a class="post-link" href="{{ post.url | relative_url }}">{% include post-title.html title=post.title text=post.content %}</a>
     </li>
     {% endfor %}
   </ul>
