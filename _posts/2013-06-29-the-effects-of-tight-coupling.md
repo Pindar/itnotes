@@ -8,5 +8,5 @@ categories: ''
 ---
 <p><a href="http://devopsreactions.tumblr.com/post/53347746119/the-effects-of-tight-coupling" class="tumblr_blog">devopsreactions</a>:</p>
 
-<blockquote><p><img src="http://media.tumblr.com/b7a060895115636de02ca58a0b1a5794/tumblr_inline_moifqlTNfv1qz4rgp.gif" alt="image"/></p>
+<blockquote><p><img src="/assets/uploads/tumblr-tight-coupling.gif" alt="image"/></p>
 <p>Image by joseph and others</p></blockquote>

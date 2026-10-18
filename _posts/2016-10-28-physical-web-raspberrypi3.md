@@ -9,7 +9,7 @@ comments: true
 Lately I stumbled over [Google's Eddystone](https://developers.google.com/beacons/) protocol and how it brings the word wide web to the physical world or the other way around: how it enhances physical things with the internet. This idea is nothing new: there was/is RFID/NFC or even barcodes.
 What I can see as real advantage of the [physical web](https://google.github.io/physical-web/) compared to these other technologies is that you get contextual information without opening any app or touching a specific physical thing.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/1yaLPRgtlR0" frameborder="0" allowfullscreen style="max-width: 100% !important;"></iframe>
+<a href="https://www.youtube.com/watch?v=1yaLPRgtlR0">Video auf YouTube ansehen</a>
 
 Real contextual information is possible without being disturbed by push notifications. For instance you are waiting in public office area. Now you can pick up a digital ticket just as you enter or you get finally the online self care service shown.
 An other good show case might be a train station which shows you the delays etc.
@@ -24,7 +24,7 @@ The good news are you can set-up a basic physical web experiment just within min
 
 
 [How to enable Physical Web beacons on iOS](https://youtu.be/gxPcPXSE_O0).
-<iframe width="560" height="315" src="https://www.youtube.com/embed/gxPcPXSE_O0" frameborder="0" allowfullscreen style="max-width: 100% !important;"></iframe>
+<a href="https://www.youtube.com/watch?v=gxPcPXSE_O0">Video auf YouTube ansehen</a>
 
 And even more information and ideas you will find in this video:
-<iframe width="560" height="315" src="https://www.youtube.com/embed/-kjzVB8plZE" frameborder="0" allowfullscreen style="max-width: 100% !important;"></iframe>
+<a href="https://www.youtube.com/watch?v=-kjzVB8plZE">Video auf YouTube ansehen</a>
