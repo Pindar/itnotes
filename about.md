@@ -7,6 +7,8 @@ lang: en
 
 # About
 
+<img class="portrait" src="/assets/simon.jpg" width="180" height="180" alt="Portrait of Simon Dittlmann">
+
 I keep this blog as a personal notebook: things I learned and want to remember, written down in case they help someone else.
 
 ## Elsewhere
