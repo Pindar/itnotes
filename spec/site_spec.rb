@@ -92,6 +92,12 @@ RSpec.describe 'The built site' do # rubocop:disable RSpec/DescribeClass
       expect(counts).to eq([1, 1, 1])
     end
 
+    it 'renders exactly one h1 on every built page' do
+      pages = Dir.glob(File.join(site, '**', 'index.html')).reject { |file| file.include?('/assets/') }
+      offenders = pages.reject { |file| h1_count(File.read(file)) == 1 }
+      expect(offenders.map { |file| file.delete_prefix(site) }).to be_empty
+    end
+
     it 'marks the current page in the navigation' do
       expect(about).to match(%r{<a[^>]*href="/about"[^>]*aria-current="page"})
     end
