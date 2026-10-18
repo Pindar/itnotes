@@ -7,57 +7,61 @@ lang: en
 
 # My Book Shelf
 
-## On the desk reading
+Here is a small excerpt of the books and podcasts I learned a lot from. I hope
+there is something in it for you, too. Please bear with me in case I skipped
+your favorite one.
 
-- The Innovator's Dilemma: When New Technologies Cause Great Firms to Fail (Management of Innovation and Change)  
-  by Clayton M. Christensen
+## Books
 
-## On the shelf for a rest
-
-- Domain-Driven Design: Tackling Complexity in the Heart of Software  
-  by Eric Evans
-
-## On the shelf (done reading)
-
+- Thinking in Systems  
+  by Donella H. Meadows. My personal favorite. Once you understand feedback
+  loops you see them everywhere, at work and in daily life. I highly recommend
+  it.
+- Outcomes Over Output  
+  by Joshua Seiden. A short read about caring more for what changes for people
+  than for what we build. Simple idea, big effect.
+- Continuous Discovery Habits  
+  by Teresa Torres. Nice and practical habits to stay curious about the people
+  you build things for.
+- Wardley Maps  
+  by Simon Wardley. A great way to draw a picture of a situation, so everyone
+  talks about the same thing. Worth trying out yourself.
+- Collaborative Software Design  
+  by Evelyn van Kelle, Gien Verschatse, Kenny Baas-Schwegler. Workshop ideas
+  that help people with different views understand each other. Well done!
+- Agile IT Organization Design  
+  by Sriram Narayan. Why the way we organize ourselves matters as much as the
+  technology.
+- Platform Strategy  
+  by Gregor Hohpe. Thoughts about building things that other people love to
+  use.
 - Team Topologies  
-  by Matthew Skelton and Manuel Pais
-- Site Reliability Engineering: How Google Runs Production Systems  
-  by Betsy Beyer, Chris Jones, Jennifer Petoff, Niall Richard Murphy
-- Capitalism without Capital: Rise of Intangible Economy  
-  by Jonathan Haskel
-- Measure What Matters: OKRs: The Simple Idea that Drives 10x Growth  
-  by John Doerr
-- Blitzscaling: The Lightning-Fast Path to Building Massively Valuable Companies  
-  by Reid Hoffman
-- The Hundred-Page Machine Learning Book  
-  by Andriy Burkov
-- Stories That Stick: How Storytelling Can Captivate Customers, Influence Audiences, and Transform Your Business  
-  by Kindra Hall
-- What, Exactly, Is Business Development?: A Primer on Getting Deals Done (English Edition)  
-  by Scott Pollack
-- How Clients Buy: A Practical Guide to Business Development for Consulting and Professional Services (English Edition)  
-  by Tom McMakin
-- Lateral Thinking: Creativity Step by Step  
-  by Edward de Bono
-- Agile IT Organization Design: For Digital Transformation and Continuous Delivery  
-  by Sriram Narayan
-- Behind Closed Doors. Secrets of Great Management  
-  by Johanna Rothman and Esther Derby
-- Hit Refresh: The Quest to Rediscover Microsoft’s Soul and Imagine a Better Future for Everyone  
-  by Satya Nadella
-- 1984  
-  by George Orwell
-- Transformationale Produkte: Der Code von digitalen Produkten, die unseren Alltag erobern und die Wirtschaft revolutionieren  
-  by Matthias Schrader
-- Starting With Why  
-  by Simon Sinek
-- Logicomix: An Epic Search for Truth  
-  by Apostolos Doxiadis, Christos Papadimitriou
-- Kanban (English Edition)  
-  by David J. Anderson
-- Impact Mapping: Making a big impact with software products and projects (English Edition)  
-  by Gojko Adzic
-- Rework  
-  by Jason Fried and David Heinemeier Hansson
-- The Phoenix Project: A Novel about IT, DevOps, and Helping Your Business Win  
-  by Gene Kim, Kevin Behr, and George Spafford
+  by Matthew Skelton and Manuel Pais. A fresh look at how teams can work
+  together without getting in each other's way.
+- Capitalism without Capital  
+  by Jonathan Haskel and Stian Westlake. An eye-opener about how much of what
+  we value today cannot be touched.
+- Thinking, Fast and Slow  
+  by Daniel Kahneman. A humbling read about how our minds trick us.
+- Vom Solo zur Sinfonie  
+  by Christian Gansch. What an orchestra can teach us about listening and
+  playing together.
+
+## Podcasts
+
+- Think Fast, Talk Smart  
+  Practical ideas to speak more clearly and confidently.
+- Software Engineering Radio  
+  Deep dives into how software is built.
+- The Pragmatic Engineer  
+  Honest conversations about work in tech.
+- Tech Lead Journal  
+  Interviews about growing as a developer and as a leader.
+- CoRecursive: Coding Stories  
+  Stories about the people behind software.
+- The Stack Overflow Podcast  
+  Developer life, tools and the changes AI brings.
+- a16z Podcast  
+  Big-picture talks about technology and where it is heading.
+- HBR IdeaCast  
+  Short and thoughtful conversations about working together.
