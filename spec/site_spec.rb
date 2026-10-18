@@ -110,8 +110,10 @@ RSpec.describe 'The built site' do # rubocop:disable RSpec/DescribeClass
       expect(about).not_to match(%r{<a[^>]*href="/"[^>]*aria-current="page"})
     end
 
-    it 'uses no utility classes in the markup' do
-      expect(home + about + post_html).not_to match(/class="[^"]*\b(?:text-gray|bg-gray|max-w-|space-y|mx-auto)/)
+    it 'uses no utility classes in any built page' do
+      utility = /class="[^"]*\b(?:text-(?:gray|blue|\d?xl|lg|sm)|bg-|max-w-|space-[xy]|m[xtb]-|p[xyb]-|font-)/
+      offenders = Dir.glob(File.join(site, '**', '*.html')).select { |file| File.read(file).match?(utility) }
+      expect(offenders.map { |file| file.delete_prefix(site) }).to be_empty
     end
 
     it 'does not nest prose containers' do
