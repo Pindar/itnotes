@@ -8,5 +8,5 @@ categories: ''
 ---
 <p><a href="http://devopsreactions.tumblr.com/post/48511362536/i-dont-need-to-test-that-what-can-possibly-go-wrong" class="tumblr_blog">devopsreactions</a>:</p>
 
-<blockquote><p><img src="http://i.imgur.com/43sf9NL.gif"/></p>
+<blockquote><p><img src="http://i.imgur.com/43sf9NL.gif" alt="Animierte GIF-Grafik"/></p>
 <p>Image by IceMan1988</p></blockquote>

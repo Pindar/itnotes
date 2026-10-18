@@ -1,0 +1,23 @@
+{
+  "name": "itnotes-dev-tooling",
+  "private": true,
+  "description": "Dev-only linters for the itnotes Jekyll blog (not part of the site build)",
+  "scripts": {
+    "lint": "npm run lint:md && npm run lint:css && npm run lint:js && npm run lint:html && npm run lint:yaml && npm run lint:ruby",
+    "lint:md": "markdownlint-cli2",
+    "lint:css": "stylelint \"assets/css/**/*.css\"",
+    "lint:js": "eslint .",
+    "lint:html": "html-validate _layouts 404.html",
+    "lint:yaml": "yamllint -c .yamllint.yml .",
+    "lint:ruby": "bundle exec rubocop",
+    "format:check": "prettier --check ."
+  },
+  "devDependencies": {
+    "eslint": "^9.0.0",
+    "html-validate": "^9.0.0",
+    "markdownlint-cli2": "^0.17.0",
+    "prettier": "^3.0.0",
+    "stylelint": "^16.0.0",
+    "stylelint-config-standard": "^36.0.0"
+  }
+}

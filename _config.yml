@@ -16,3 +16,16 @@ exclude:
   - check_posts.rb
   - CLAUDE.md
   - assets/README.md
+  - Gemfile
+  - Gemfile.lock
+  - Rakefile
+  - lib
+  - spec
+  - node_modules
+  - vendor
+  - package.json
+  - package-lock.json
+  - eslint.config.js
+  - .githooks
+  - .github
+  - .claude
