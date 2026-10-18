@@ -161,15 +161,15 @@ connect().use(
   f) wire everything together -- add files to index.html
 <pre>
 <code class="html">
-<!-- vendor scripts... -->
-<!-- process:remove -->
-<script src="bower_components/angular-mocks/angular-mocks.js"></script>
-<!-- /process -->
-<!-- your production scripts -->
-<!-- process:remove -->
-<script src="mock/catalog-us.js"></script>
-<script src="scripts/app-mock.js"></script>
-<!-- /process -->
+&lt;!-- vendor scripts... --&gt;
+&lt;!-- process:remove --&gt;
+&lt;script src="bower_components/angular-mocks/angular-mocks.js"&gt;&lt;/script&gt;
+&lt;!-- /process --&gt;
+&lt;!-- your production scripts --&gt;
+&lt;!-- process:remove --&gt;
+&lt;script src="mock/catalog-us.js"&gt;&lt;/script&gt;
+&lt;script src="scripts/app-mock.js"&gt;&lt;/script&gt;
+&lt;!-- /process --&gt;
 </code>
 </pre>
 

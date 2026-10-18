@@ -47,6 +47,10 @@ RSpec.describe 'The built site' do # rubocop:disable RSpec/DescribeClass
       expect(external_resources(%r{<script[^>]+src="((?:https?:)?//[^"]+)"})).to be_empty
     end
 
+    it 'loads no script files at all (the site ships no JavaScript)' do
+      expect(external_resources(/<script[^>]+src="([^"]+)"/)).to be_empty
+    end
+
     it 'embeds no iframes' do
       expect(external_resources(/<iframe[^>]*src="([^"]+)"/)).to be_empty
     end
