@@ -2,14 +2,14 @@
 
 Source of [itnotes.de](https://www.itnotes.de): a German-language blog with notes on IT, lean development, DevOps and programming, running since 2009.
 
-It is a static [Jekyll](https://jekyllrb.com) site (theme `minima`, built with the `github-pages` gem) and is served via GitHub Pages. The site ships no JavaScript; Node is only used for dev-time linters.
+It is a static [Jekyll](https://jekyllrb.com) site (built with the `github-pages` gem) and is served via GitHub Pages. The site ships no JavaScript; Node is only used for dev-time linters.
 
 ## What is in this repo
 
 | Path | Purpose |
 | --- | --- |
 | `_posts/` | One Markdown file per post, named `YYYY-MM-DD-slug.md` |
-| `_layouts/` | `default`, `page` and `post` layouts (extend the `minima` theme) |
+| `_layouts/` | `default`, `page` and `post` layouts (self-contained, no Jekyll theme) |
 | `assets/` | Images, CSS, downloads and uploads used by posts |
 | `_config.yml` | Site title, description, permalink scheme, canonical URL |
 | `about.md`, `book-shelf.md`, `datenschutz.md`, `index.md` | Static pages |

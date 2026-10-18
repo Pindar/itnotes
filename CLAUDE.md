@@ -46,7 +46,7 @@ npm run lint                              # markdown, css, js, html, yaml, ruby 
 ## Architecture
 
 - `_posts/` — one Markdown file per post, named `YYYY-MM-DD-slug.md`. Many are migrated from an old WordPress export, so front matter carries legacy fields (`wordpress_id`, `wordpress_url`, `author_*`, `date_gmt`) alongside the Jekyll-required `layout`, `title`, `date`, `categories`. New posts only need the Jekyll-required fields.
-- `_layouts/` — `default.html` (site chrome), `page.html`, `post.html`. Theme is `minima` (set in `_config.yml`), these layouts override/extend it.
+- `_layouts/` — `default.html` (site chrome), `page.html`, `post.html`. No Jekyll theme is used; the layouts and `assets/css/custom.css` are self-contained.
 - `assets/` — images referenced by posts, plus `css/`, `downloads/`, `uploads/`. Post image paths are checked against this directory by `check_images.rb`.
 - `_config.yml` — site title/description (German), `permalink: /:categories/:year/:month/:day/:title/`, canonical `url: https://www.itnotes.de`. `exclude:` list must include any new non-Jekyll utility scripts/files added at the repo root (see the existing entries: `Gemfile`, `Rakefile`, `lib`, `spec`, `package.json`, ...) so Jekyll doesn't try to process them.
 - `_site/` — build output, not source; don't hand-edit.
