@@ -103,6 +103,23 @@ RSpec.describe 'The built site' do # rubocop:disable RSpec/DescribeClass
       expect(offenders.map { |file| file.delete_prefix(site) }).to be_empty
     end
 
+    it 'gives every post list entry a visible title' do
+      expect(home).not_to match(%r{<a class="post-link"[^>]*>\s*</a>})
+    end
+
+    it 'gives every post page a non-empty h1' do
+      pages = Dir.glob(File.join(site, '**', 'index.html'))
+      posts = pages.select { |file| File.read(file).include?('class="post-header"') }
+      offenders = posts.select { |file| File.read(file).match?(%r{<h1[^>]*>\s*</h1>}) }
+      expect(offenders.map { |file| file.delete_prefix(site) }).to be_empty
+    end
+
+    it 'falls back to the first words of the post when the title is empty' do
+      page = File.read(Dir.glob(File.join(site, '**', '*scriptsht*', 'index.html')).first)
+      heading = page[%r{<h1[^>]*>(.*?)</h1>}m, 1].strip
+      expect(heading).to match(/\AVideo auf YouTube ansehen [^<&]*\z/)
+    end
+
     it 'marks the current page in the navigation' do
       expect(about).to match(%r{<a[^>]*href="/about"[^>]*aria-current="page"})
     end
