@@ -65,5 +65,3 @@ your favorite one.
   Big-picture talks about technology and where it is heading.
 - HBR IdeaCast  
   Short and thoughtful conversations about working together.
-- bto – der Ökonomie-Podcast  
-  German-language podcast about economics, good for the bigger picture.
