@@ -1,0 +1,28 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(bundle exec rake*)",
+      "Bash(bundle exec rspec*)",
+      "Bash(bundle exec rubocop*)",
+      "Bash(bundle exec jekyll build*)",
+      "Bash(npm run lint*)",
+      "Bash(npx markdownlint-cli2*)",
+      "Bash(ruby check_posts.rb)",
+      "Bash(ruby check_images.rb)",
+      "Bash(gitleaks *)"
+    ]
+  },
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": ".claude/hooks/lint-edited-file.sh"
+          }
+        ]
+      }
+    ]
+  }
+}

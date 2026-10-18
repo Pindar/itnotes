@@ -1,0 +1,6 @@
+_site/
+node_modules/
+_layouts/
+_posts/
+*.md
+*.html

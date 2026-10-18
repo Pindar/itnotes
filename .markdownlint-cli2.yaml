@@ -1,0 +1,23 @@
+globs:
+  - "**/*.md"
+ignores:
+  - _site/**
+  - node_modules/**
+  - vendor/**
+  - assets/README.md
+config:
+  default: true
+  MD013: false # long lines
+  MD024: false # duplicate headings
+  MD033: false # inline HTML
+  MD034: false # bare URLs
+  MD036: false # emphasis as heading
+  MD041: false # first line heading (front matter / German titles)
+  MD025: false # layouts render the title as h1
+  MD009: false # trailing spaces (legacy WordPress export, hard line breaks)
+  MD010: false # hard tabs in legacy code blocks
+  MD012: false # multiple blank lines
+  MD022: false # legacy headings without blank lines
+  MD026: false # trailing punctuation in headings
+  MD029: false # legacy ordered list numbering
+  MD032: false # legacy lists without blank lines
