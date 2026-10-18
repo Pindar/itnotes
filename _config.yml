@@ -2,7 +2,7 @@ title: ITNotes
 description: Informatik-Themen kurz notiert oder ausführlich festgehalten
 lang: de
 logo: /assets/default.jpg
-theme: minima
+theme: null # layouts are self-contained; stops the github-pages default theme
 permalink: /:categories/:year/:month/:day/:title/
 baseurl: "" # Leer lassen, wenn die Seite unter <benutzername>.github.io läuft
 url: "https://www.itnotes.de" # Anpassen

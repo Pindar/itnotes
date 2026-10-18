@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require 'html-proofer'
+require 'yaml'
 require 'itnotes/post_checker'
 require 'support/built_site'
 
@@ -140,8 +141,25 @@ RSpec.describe 'The built site' do # rubocop:disable RSpec/DescribeClass
       expect(home).to match(%r{<footer[\s\S]*href="/datenschutz"})
     end
 
+    it 'highlights the title of every book on the book shelf' do
+      shelf = File.read(File.join(site, 'book-shelf', 'index.html'))
+      expect(shelf).to include('<strong>Thinking in Systems</strong>').and include('<strong>Team Topologies</strong>')
+    end
+
     it 'shows a portrait with alt text on the about page' do
       expect(about).to match(%r{<img[^>]*src="/assets/simon\.jpg"[^>]*alt="[^"]+"})
+    end
+  end
+
+  context 'when configuring the site' do
+    it 'declares no Jekyll theme (the layouts are self-contained)' do
+      config = YAML.safe_load_file(File.join(BuiltSite::ROOT, '_config.yml'))
+      expect(config['theme']).to be_nil
+    end
+
+    it 'ships only its own stylesheet, no theme CSS' do
+      css_files = Dir.glob(File.join(site, '**', '*.css')).map { |file| file.delete_prefix(site) }
+      expect(css_files).to eq(['/assets/css/custom.css'])
     end
   end
 
