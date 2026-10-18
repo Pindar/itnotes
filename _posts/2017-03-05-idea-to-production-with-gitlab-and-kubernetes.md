@@ -67,15 +67,15 @@ This step by step instructions will help you to get Google Cloud Platform, Googl
 | DOCKER_HOST                          | to get gitlab runner working on kubernetes set it to tcp://localhost:2375 |
 | GCLOUD_PROJECT                       | google cloud project id, e.g., test-gitlabci-k8s-XXX                      |
 
-[![GitLab CI/CD secret variables settings](https://raw.githubusercontent.com/Pindar/gcloud-k8s-express-app/master/doc/images/gitlab_secret_variables_section.png)](https://raw.githubusercontent.com/Pindar/gcloud-k8s-express-app/master/doc/images/gitlab_secret_variables_section.png)
+[![GitLab CI/CD secret variables settings](/assets/gitlab-kubernetes/gitlab_secret_variables_section.png)](/assets/gitlab-kubernetes/gitlab_secret_variables_section.png)
 
 1. If you don't trust the shared gitlab-ci-runner on gitlab.com check out this related [how-to](https://github.com/Pindar/gcloud-k8s-express-app/blob/master/k8s/gitlab-ci-runner/README.md) to have your own runners on your GKE/Kubernetes cluster.
-1. It's done. Now you can run a build. Make a small change at any file, commit, push and see how the pipeline kicks-in. [![GitLab CI pipeline running after a push](https://raw.githubusercontent.com/Pindar/gcloud-k8s-express-app/master/doc/images/gitlab_pipeline.png)](https://raw.githubusercontent.com/Pindar/gcloud-k8s-express-app/master/doc/images/gitlab_pipeline.png)
+1. It's done. Now you can run a build. Make a small change at any file, commit, push and see how the pipeline kicks-in. [![GitLab CI pipeline running after a push](/assets/gitlab-kubernetes/gitlab_pipeline.png)](/assets/gitlab-kubernetes/gitlab_pipeline.png)
 
 ### DNS / Connecting Cluster
 
 1. As soon as master was build once there will be a ingress load balancer which is going to have the public IP address. Therefore your last setup-step is to update your DNS settings to the ingress IP you get by calling `kubectl --namespace=production get ing`
-1. Now you can also proxy to your Cluster from your Cloud Console. First run `kubectl proxy --port 8080` and second start web preview, see [![Google Cloud Console web preview via kubectl proxy](https://raw.githubusercontent.com/Pindar/gcloud-k8s-express-app/master/doc/images/web_preview.png)](https://raw.githubusercontent.com/Pindar/gcloud-k8s-express-app/master/doc/images/web_preview.png)
+1. Now you can also proxy to your Cluster from your Cloud Console. First run `kubectl proxy --port 8080` and second start web preview, see [![Google Cloud Console web preview via kubectl proxy](/assets/gitlab-kubernetes/web_preview.png)](/assets/gitlab-kubernetes/web_preview.png)
 
 *In case you run it locally on your pc or mac*
 

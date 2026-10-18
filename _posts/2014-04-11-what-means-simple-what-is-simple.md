@@ -20,7 +20,7 @@ When you working in the IT you hear everywhere &#8220;keep it simple&#8221;, &#8
 <p>After thinking about this for quite a long time now I believe we need to think about &#8220;simple&#8221; as a function over time. Something can be simple today but is too complicated tomorrow. Furthermore it could happen that it is too much simplified in the future so it&#8217;s not fitting all the needs anymore!
 Aside from that I believe that simplicity is not free when you bring effectiveness and efficiency into the game&#160;!</p>
 
-<p><img src="https://31.media.tumblr.com/e33a8fbf7e2c916b138e08a11441bae2/tumblr_inline_n3vqwnjqEK1rbq4zs.png" alt=""/></p>
+<p><img src="/assets/uploads/tumblr-what-is-simple.png" alt=""/></p>
 
 <p>When we bring all together I would say that the perfect simplicity costs to much in most of the cases that it&#8217;s often not worth to actually reach it. That means that it is ok to be simple enough in a lot of cases and maybe provide not the best (in terms of simplicity) solution but maybe the Most Valuable (keyword MVP) one.</p>
 

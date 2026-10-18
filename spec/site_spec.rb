@@ -34,10 +34,76 @@ RSpec.describe 'The built site' do # rubocop:disable RSpec/DescribeClass
     expect { proofer.run }.not_to raise_error
   end
 
+  context 'when checking GDPR-relevant third-party requests' do
+    let(:html_files) { Dir.glob(File.join(site, '**', '*.html')) }
+
+    def external_resources(tag_pattern)
+      html_files.flat_map do |file|
+        File.read(file).scan(tag_pattern).map { |match| "#{file.delete_prefix(site)}: #{match}" }
+      end
+    end
+
+    it 'embeds no scripts from other hosts' do
+      expect(external_resources(%r{<script[^>]+src="((?:https?:)?//[^"]+)"})).to be_empty
+    end
+
+    it 'embeds no iframes' do
+      expect(external_resources(/<iframe[^>]*src="([^"]+)"/)).to be_empty
+    end
+
+    it 'loads no images from other hosts' do
+      pattern = %r{<img[^>]+src="((?:https?:)?//(?!www\.itnotes\.de)[^"]+)"}
+      expect(external_resources(pattern)).to be_empty
+    end
+  end
+
+  context 'when checking profile content and navigation' do
+    let(:html_files) { Dir.glob(File.join(site, '**', '*.html')) }
+
+    it 'shows the personal statement in the navigation of every page' do
+      missing = html_files.reject { |file| File.read(file).include?('Everything is an experiment') }
+      expect(missing.map { |file| file.delete_prefix(site) }).to be_empty
+    end
+
+    it 'links no Xing profile' do
+      expect(html_files.select { |file| File.read(file).include?('xing.com') }).to be_empty
+    end
+
+    it 'publishes no schema.org profile links (sameAs)' do
+      expect(html_files.select { |file| File.read(file).include?('"sameAs"') }).to be_empty
+    end
+
+    it 'has no publications page' do
+      expect(File.exist?(File.join(site, 'publications', 'index.html'))).to be(false)
+    end
+  end
+
+  context 'when providing the privacy notice' do
+    let(:notice) { File.read(File.join(site, 'datenschutz', 'index.html')) }
+
+    it 'is written in German' do
+      expect(notice).to match(/<html[^>]*lang="de"/)
+    end
+
+    it 'names the controller and the GitHub hosting' do
+      expect(notice).to include('Simon Dittlmann').and include('GitHub Pages')
+    end
+
+    it 'states that no cookies or analytics are used' do
+      expect(notice).to include('keine Cookies').and include('keine Analyse')
+    end
+
+    it 'is linked from the navigation of every page' do
+      files = Dir.glob(File.join(site, '**', '*.html'))
+      missing = files.reject { |file| File.read(file).include?('href="/datenschutz"') }
+      expect(missing).to be_empty
+    end
+  end
+
   def proofer_options
     {
       disable_external: true, enforce_https: false, ignore_missing_alt: true, allow_missing_href: true,
-      ignore_files: [%r{/404\.html\z}], ignore_urls: [%r{\A//platform\.twitter\.com/}]
+      ignore_files: [%r{/404\.html\z}]
     }
   end
 end
